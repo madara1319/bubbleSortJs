@@ -36,8 +36,9 @@ entryInput.addEventListener("keypress", (e) => {
     console.log(Array.isArray(sortedArray));
     console.log(sortedArray);
     bubbleSort(sortedArray);
-    console.log(sortedArray);
+    console.log(bubbleSort(entryInput.value));
     dispArray.innerHTML = `Sorted array looks like this ${sortedArray}`;
+    console.log(bubbleSort([3, 2, 1]));
   }
 });
 
