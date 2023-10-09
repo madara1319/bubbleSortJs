@@ -20,9 +20,9 @@ let bubbleSort = (array) => {
   }
   return array;
 };
-console.log(`Array looks like this before ${testArray}`);
-bubbleSort(testArray);
-console.log(`Array looks like this after ${testArray}`);
+// console.log(`Array looks like this before ${testArray}`);
+// bubbleSort(testArray);
+// console.log(`Array looks like this after ${testArray}`);
 
 const dispArray = document.querySelector(".showArray");
 const entryInput = document.querySelector("textArea");
@@ -32,13 +32,17 @@ entryInput.addEventListener("keypress", (e) => {
     e.preventDefault();
     localStorage.setItem("entry", entryInput.value);
     let sortedArray = bubbleSort(entryInput.value);
-
+    let enteredArray = [];
+    enteredArray = [entryInput.value.split()];
+    sortedArray = enteredArray;
     console.log(Array.isArray(sortedArray));
     console.log(sortedArray);
-    bubbleSort(sortedArray);
-    console.log(bubbleSort(entryInput.value));
+    console.log(typeof entryInput.value);
+    console.log(bubbleSort(sortedArray.value));
     dispArray.innerHTML = `Sorted array looks like this ${sortedArray}`;
-    console.log(bubbleSort([3, 2, 1]));
+    // console.log(bubbleSort([3, 2, 1]));
+    console.log(enteredArray);
+    console.log(typeof enteredArray);
   }
 });
 
