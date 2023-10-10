@@ -1,5 +1,5 @@
-console.log("Test");
-testArray = [9, 8, 7, 6, 5, 4, 3, 2, 1];
+// console.log("Test");
+// testArray = [9, 8, 7, 6, 5, 4, 3, 2, 1];
 
 let bubbleSort = (array) => {
   let isSorted = false;
@@ -20,9 +20,27 @@ let bubbleSort = (array) => {
   }
   return array;
 };
-// console.log(`Array looks like this before ${testArray}`);
-// bubbleSort(testArray);
-// console.log(`Array looks like this after ${testArray}`);
+
+// let stringToNumberArray = (array) => {
+//   let numberedArray = array.split(",").map(Number);
+//   return numberedArray;
+// };
+
+let stringToNumberArray = (array) => {
+  if (array[0] === "[") {
+    let numberArray = [];
+    for (let i = 0; i < array.length; i++) {
+      if (Number.isInteger(parseInt(array[i]))) {
+        numberArray.push(parseInt(array[i]));
+        // console.log(array[i]);
+      }
+    }
+    return numberArray;
+  } else if (Number.isInteger(parseInt(array[0]))) {
+    let numberedArray = array.split(",").map(Number);
+    return numberedArray;
+  } else return `You didnt input Array`;
+};
 
 const dispArray = document.querySelector(".showArray");
 const entryInput = document.querySelector("textArea");
@@ -31,18 +49,16 @@ entryInput.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
     e.preventDefault();
     localStorage.setItem("entry", entryInput.value);
-    let sortedArray = bubbleSort(entryInput.value);
-    let enteredArray = [];
-    enteredArray = [entryInput.value.split()];
-    sortedArray = enteredArray;
-    console.log(Array.isArray(sortedArray));
-    console.log(sortedArray);
-    console.log(typeof entryInput.value);
-    console.log(bubbleSort(sortedArray.value));
-    dispArray.innerHTML = `Sorted array looks like this ${sortedArray}`;
-    // console.log(bubbleSort([3, 2, 1]));
+    let enteredArray;
+    enteredArray = stringToNumberArray(entryInput.value);
+    dispArray.innerHTML = `Sorted array looks like this ${bubbleSort(
+      enteredArray
+    )} not sorted Array looks like this ${enteredArray} entry Input value looks like this ${
+      entryInput.value
+    }`;
     console.log(enteredArray);
     console.log(typeof enteredArray);
+    console.log(stringToNumberArray(entryInput.value));
   }
 });
 
