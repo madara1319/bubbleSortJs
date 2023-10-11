@@ -1,6 +1,3 @@
-// console.log("Test");
-// testArray = [9, 8, 7, 6, 5, 4, 3, 2, 1];
-
 let bubbleSort = (array) => {
   let isSorted = false;
   let unsortedUntilIndex = array.length - 1;
@@ -21,17 +18,22 @@ let bubbleSort = (array) => {
   return array;
 };
 
-// let stringToNumberArray = (array) => {
-//   let numberedArray = array.split(",").map(Number);
-//   return numberedArray;
-// };
-
 let stringToNumberArray = (array) => {
   if (array[0] === "[") {
     let numberArray = [];
-    for (let i = 0; i < array.length; i++) {
-      if (Number.isInteger(parseInt(array[i]))) {
-        numberArray.push(parseInt(array[i]));
+    let stringInputArray = array;
+    stringInputArray = stringInputArray.slice(1);
+    stringInputArray = stringInputArray.slice(0, stringInputArray.length - 1);
+    console.log(
+      `pierwszy znak stringInputArray ${stringInputArray[0]} a ostatni to ${
+        stringInputArray[stringInputArray.length - 1]
+      }`
+    );
+    console.log(`array wyglada jak ${stringInputArray}`);
+    let numberedArray = stringInputArray.split(",").map(Number);
+    for (let i = 0; i < numberedArray.length; i++) {
+      if (Number.isInteger(parseInt(numberedArray[i]))) {
+        numberArray.push(parseInt(numberedArray[i]));
         // console.log(array[i]);
       }
     }
@@ -53,13 +55,9 @@ entryInput.addEventListener("keypress", (e) => {
     enteredArray = stringToNumberArray(entryInput.value);
     dispArray.innerHTML = `Sorted array looks like this ${bubbleSort(
       enteredArray
-    )} not sorted Array looks like this ${enteredArray} entry Input value looks like this ${
-      entryInput.value
-    }`;
+    )}  entry Input value looks like this ${entryInput.value}`;
     console.log(enteredArray);
     console.log(typeof enteredArray);
     console.log(stringToNumberArray(entryInput.value));
   }
 });
-
-// entryInput.value = localStorage.getItem("entry");
