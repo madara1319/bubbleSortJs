@@ -17,7 +17,7 @@ let bubbleSort = (array) => {
   }
   return array;
 };
-
+let correctArray;
 let stringToNumberArray = (array) => {
   if (array[0] === "[") {
     let numberArray = [];
@@ -37,11 +37,15 @@ let stringToNumberArray = (array) => {
         // console.log(array[i]);
       }
     }
+    correctArray = true;
     return numberArray;
   } else if (Number.isInteger(parseInt(array[0]))) {
     let numberedArray = array.split(",").map(Number);
+    correctArray = true;
     return numberedArray;
-  } else return `You didnt input Array`;
+  } else {
+    correctArray = false;
+  }
 };
 
 const dispArray = document.querySelector(".showArray");
@@ -53,9 +57,13 @@ entryInput.addEventListener("keypress", (e) => {
     localStorage.setItem("entry", entryInput.value);
     let enteredArray;
     enteredArray = stringToNumberArray(entryInput.value);
-    dispArray.innerHTML = `Sorted array looks like this ${bubbleSort(
-      enteredArray
-    )}  entry Input value looks like this ${entryInput.value}`;
+    if (correctArray) {
+      dispArray.innerHTML = `Sorted array looks like this ${bubbleSort(
+        enteredArray
+      )} `;
+    } else {
+      dispArray.innerHTML = `You didnt enter array correctly `;
+    }
     console.log(enteredArray);
     console.log(typeof enteredArray);
     console.log(stringToNumberArray(entryInput.value));
