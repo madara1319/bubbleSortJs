@@ -1,52 +1,8 @@
-let bubbleSort = (array) => {
-  let isSorted = false;
-  let unsortedUntilIndex = array.length - 1;
-  while (!isSorted) {
-    isSorted = true;
-    for (let i = 0; i < unsortedUntilIndex; i++) {
-      // console.log(`Kutas ${i} to ${testArray[i]}`);
-      if (array[i] > array[i + 1]) {
-        let buffer = array[i];
-        array[i] = array[i + 1];
-        array[i + 1] = buffer;
-        isSorted = false;
-      }
-    }
-    unsortedUntilIndex--;
-    //   console.log(`Just a look at array ${array}`);
-  }
-  return array;
-};
-let correctArray;
-let stringToNumberArray = (array) => {
-  if (array[0] === "[") {
-    let numberArray = [];
-    let stringInputArray = array;
-    stringInputArray = stringInputArray.slice(1);
-    stringInputArray = stringInputArray.slice(0, stringInputArray.length - 1);
-    console.log(
-      `pierwszy znak stringInputArray ${stringInputArray[0]} a ostatni to ${
-        stringInputArray[stringInputArray.length - 1]
-      }`
-    );
-    console.log(`array wyglada jak ${stringInputArray}`);
-    let numberedArray = stringInputArray.split(",").map(Number);
-    for (let i = 0; i < numberedArray.length; i++) {
-      if (Number.isInteger(parseInt(numberedArray[i]))) {
-        numberArray.push(parseInt(numberedArray[i]));
-        // console.log(array[i]);
-      }
-    }
-    correctArray = true;
-    return numberArray;
-  } else if (Number.isInteger(parseInt(array[0]))) {
-    let numberedArray = array.split(",").map(Number);
-    correctArray = true;
-    return numberedArray;
-  } else {
-    correctArray = false;
-  }
-};
+import {
+  correctArray,
+  stringToNumberArray,
+} from "./modules/stringToNumberArray";
+import { bubbleSort } from "./modules/bubbleSort";
 
 const dispArray = document.querySelector(".showArray");
 const entryInput = document.querySelector("textArea");
