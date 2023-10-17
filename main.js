@@ -1,8 +1,8 @@
 import {
   correctArray,
   stringToNumberArray,
-} from "./modules/stringToNumberArray";
-import { bubbleSort } from "./modules/bubbleSort";
+} from "./modules/stringToNumberArray.js";
+import { bubbleSort } from "./modules/bubbleSort.js";
 
 const dispArray = document.querySelector(".showArray");
 const entryInput = document.querySelector("textArea");
