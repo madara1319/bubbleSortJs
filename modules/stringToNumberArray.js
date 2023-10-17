@@ -1,4 +1,5 @@
 let correctArray;
+//gotta fix function to look for incorrect inputs inside array
 let stringToNumberArray = (array) => {
   if (array[0] === "[") {
     let numberArray = [];
