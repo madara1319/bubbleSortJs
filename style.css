@@ -6,3 +6,13 @@ body {
 .firstSection {
   margin-bottom: 6px;
 }
+
+.header {
+  display: flex;
+  justify-content: center;
+}
+.headerBox {
+  font-size: 26px;
+  width: 250px;
+  background-color: #48f0a2;
+}
