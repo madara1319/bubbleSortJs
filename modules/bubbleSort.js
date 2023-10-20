@@ -17,5 +17,6 @@ let bubbleSort = (array) => {
   }
   return array;
 };
+//would be cool if u added time measurment
 
 export { bubbleSort };
