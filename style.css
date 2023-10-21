@@ -2,6 +2,9 @@ body {
   background-color: aquamarine;
   text-align: center;
   margin-top: 30vh;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
 }
 .firstSection {
   margin-bottom: 6px;
@@ -17,4 +20,21 @@ body {
   background-color: #48f0a2;
   padding: 10px;
   border-radius: 15px;
+}
+.fourthSection {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px;
+}
+.numberButton {
+  display: flex;
+  flex-direction: column;
+  background-color: #48f0a2;
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  justify-content: center;
+  align-content: center;
+  align-self: center;
 }
