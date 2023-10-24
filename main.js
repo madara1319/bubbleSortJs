@@ -3,11 +3,15 @@ import {
   stringToNumberArray,
 } from "./modules/stringToNumberArray.js";
 import { bubbleSort } from "./modules/bubbleSort.js";
-import { inputKeyboard } from "./modules/inputKeybord.js";
+import {
+  createInputKeyboard,
+  activateInputKeyboard,
+} from "./modules/inputKeybord.js";
 
 const dispArray = document.querySelector(".showArray");
 const entryInput = document.querySelector("textArea");
-inputKeyboard();
+createInputKeyboard();
+activateInputKeyboard();
 entryInput.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
     e.preventDefault();
