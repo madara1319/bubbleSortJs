@@ -7,6 +7,11 @@ import {
   createInputKeyboard,
   activateInputKeyboard,
 } from "./modules/inputKeybord.js";
+import {
+  animateButton,
+  animate,
+  animateOnKeyUp,
+} from "./modules/animateButtons.js";
 
 const dispArray = document.querySelector(".showArray");
 const entryInput = document.querySelector("textArea");
@@ -30,3 +35,5 @@ entryInput.addEventListener("keypress", (e) => {
     // console.log(stringToNumberArray(entryInput.value));
   }
 });
+$(".default").click(animate);
+$(window).keyup(animateOnKeyUp);
