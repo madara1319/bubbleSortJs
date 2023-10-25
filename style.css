@@ -38,4 +38,26 @@ body {
   justify-content: center;
   align-content: center;
   align-self: center;
+  /* w3schools  */
+  /* padding: 5px 5px; */
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  color: #043b06;
+  /* background-color: #04aa6d; */
+  border: none;
+  /* border-radius: 15px; */
+  box-shadow: 3px 3px #999;
+}
+
+.numberButton:hover {
+  background-color: #3e8e41;
+}
+
+.numberButton:active {
+  background-color: #3e8e41;
+  box-shadow: 3px 3px #666;
+  transform: translateY(4px);
 }
