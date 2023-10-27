@@ -11,12 +11,14 @@ import {
   animateButton,
   animate,
   animateOnKeyUp,
+  animateButtonOnKeyboardClicks,
 } from "./modules/animateButtons.js";
 
 const dispArray = document.querySelector(".showArray");
 const entryInput = document.querySelector("textArea");
 createInputKeyboard();
 activateInputKeyboard();
+animateButtonOnKeyboardClicks();
 entryInput.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
     e.preventDefault();
@@ -35,5 +37,5 @@ entryInput.addEventListener("keypress", (e) => {
     // console.log(stringToNumberArray(entryInput.value));
   }
 });
-$(".default").click(animate);
-$(window).keyup(animateOnKeyUp);
+// $(".default").click(animate);
+// $(window).keyup(animateOnKeyUp);
