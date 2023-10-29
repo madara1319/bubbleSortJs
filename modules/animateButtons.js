@@ -1,12 +1,11 @@
-const animateButton = document.querySelector(".fourthSection");
+let textArea = document.querySelector(".textArea");
+let buttonToBeAnimated = document.querySelector(".numberButton");
 
 function animate() {
-  // if ($(".numberButton").hasClass("activate")) {
-  //   $(".numberButton").removeClass("activate");
-  //   //   $('.numberButton').addClass('close');
+  // if ($(".numberButton").hasClass(".numberButtonActive")) {
+  //   $(".numberButton").removeClass(".numberButtonActive");
   // } else {
-  //   //   $('.numberButton').removeClass('close');
-  //   $(".numberButton").addClass("activate");
+  //   $(".numberButton").addClass("numberButtonActive");
   // }
 }
 
@@ -17,25 +16,10 @@ function animateOnKeyUp(e) {
 }
 
 let animateButtonOnKeyboardClicks = () => {
-  let keyboardButtonArray = [];
-  for (let i = 1; i < 10; i++) {
-    keyboardButtonArray[i] = document.querySelector(`.numberButton${i}`);
-    keyboardButtonArray[i].addEventListener("keypress", (e) => {
-      for (let i = 1; i < 10; i++) {
-        if (e.key === `${i}`) {
-          e.preventDefault();
-          localStorage.setItem("clickedValue", i);
-          entryInputForm.value += localStorage.getItem("clickedValue");
-          keyboardButtonArray[i].addClass(".numberButton:active");
-        }
-      }
-    });
-  }
+  textArea.addEventListener("keydown", (e) => {
+    console.log(`Key ${e.key} pressed [event: keydown]`);
+    buttonToBeAnimated.classList.add(".numberButtonActive");
+  });
 };
 
-export {
-  animateButton,
-  animate,
-  animateOnKeyUp,
-  animateButtonOnKeyboardClicks,
-};
+export { animate, animateOnKeyUp, animateButtonOnKeyboardClicks };

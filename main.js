@@ -8,7 +8,6 @@ import {
   activateInputKeyboard,
 } from "./modules/inputKeybord.js";
 import {
-  animateButton,
   animate,
   animateOnKeyUp,
   animateButtonOnKeyboardClicks,
@@ -18,6 +17,7 @@ const dispArray = document.querySelector(".showArray");
 const entryInput = document.querySelector("textArea");
 createInputKeyboard();
 activateInputKeyboard();
+animateOnKeyUp();
 animateButtonOnKeyboardClicks();
 entryInput.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
