@@ -19,6 +19,8 @@ let animateButtonOnKeyboardClicks = () => {
   textArea.addEventListener("keydown", (e) => {
     console.log(`Key ${e.key} pressed [event: keydown]`);
     buttonToBeAnimated.classList.add(".numberButtonActive");
+
+    buttonToBeAnimated.classList.remove(".numberButtonActive");
   });
 };
 
