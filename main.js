@@ -13,6 +13,9 @@ import {
   animateButtonOnKeyboardClicks,
 } from "./modules/animateButtons.js";
 
+import { selectionSort } from "./modules/selectionSort.js";
+import { insertionSort } from "./modules/insertionSort.js";
+
 const dispArray = document.querySelector(".showArray");
 const entryInput = document.querySelector("textArea");
 createInputKeyboard();
