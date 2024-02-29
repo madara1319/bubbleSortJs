@@ -16,6 +16,9 @@ import {
 import { selectionSort } from "./modules/selectionSort.js";
 import { insertionSort } from "./modules/insertionSort.js";
 
+import { SortableArray } from "./modules/quickSort.js";
+
+
 const dispArray = document.querySelector(".showArray");
 const entryInput = document.querySelector("textArea");
 createInputKeyboard();
@@ -42,3 +45,10 @@ entryInput.addEventListener("keypress", (e) => {
 });
 // $(".default").click(animate);
 // $(window).keyup(animateOnKeyUp);
+
+
+const test=new SortableArray([2,5,1,6,23,1,3,15]);
+console.log(test);
+//console.log(test.partition(0,(test.array.length-1)));
+test.quicksort(0,(test.array.length-1));
+console.log(test.array);
